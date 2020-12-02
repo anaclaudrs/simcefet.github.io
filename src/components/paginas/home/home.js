@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <Container className="pt-4" style={{marginBottom: "30px"}}>
-                Em construção...
+                Em inicial em construção...
             </Container>
         );
         }
