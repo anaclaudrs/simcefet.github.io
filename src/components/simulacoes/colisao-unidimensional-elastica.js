@@ -25,6 +25,7 @@ class ColisaoUnidimensionalElastica extends Component {
         };
 
         // Atributos da evolução da simulação
+        this.calcular = true;
         this.colidiram = false;
         this.esfera1_velocidadeAtual = null;
         this.esfera2_velocidadeAtual = null;
@@ -44,6 +45,7 @@ class ColisaoUnidimensionalElastica extends Component {
 
         // Inicializa as velocidades atuais com velocidades iniciais e 
         // o status de detecção de colisão entre as esferas
+        this.calcular = true;
         this.colidiram = false;
         this.esfera1_velocidadeAtual = this.state.esfera1_velocidade;
         this.esfera2_velocidadeAtual = this.state.esfera2_velocidade;
@@ -99,12 +101,12 @@ class ColisaoUnidimensionalElastica extends Component {
         }
 
         // Caso as esferas tenham colidido
-        if (this.colidiram) {
+        if (this.colidiram && this.calcular) {
+
+            // Evita calculo repetitivo
+            this.calcular = false;
 
             let denominador = this.state.esfera1_massa + this.state.esfera2_massa;
-
-            // this.esfera1_velocidadeAtual = -2;
-            // this.esfera2_velocidadeAtual = 2;
 
             this.esfera1_velocidadeAtual = 
                 ((this.state.esfera1_massa - this.state.esfera2_massa) / denominador) * this.state.esfera1_velocidade
@@ -114,8 +116,8 @@ class ColisaoUnidimensionalElastica extends Component {
                 ((2 * this.state.esfera1_massa) / denominador) * this.state.esfera1_velocidade
                 + ((this.state.esfera2_massa - this.state.esfera1_massa) / denominador) * this.state.esfera2_velocidade;
 
-            console.log(this.esfera1_velocidadeAtual);
-            console.log(this.esfera2_velocidadeAtual);
+            console.log("Velocidade atual da esfera azul: " + this.esfera1_velocidadeAtual);
+            console.log("Velocidade atual da esfera vermelha: " + this.esfera2_velocidadeAtual);
 
         }
 
@@ -135,7 +137,7 @@ class ColisaoUnidimensionalElastica extends Component {
             const name = target.name;
             const value = target.type === 'checkbox' ? target.checked : target.value;
             this.setState({
-                [name]: value
+                [name]: Number(value)
             });
         };
 

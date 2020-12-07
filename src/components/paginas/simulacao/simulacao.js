@@ -28,6 +28,7 @@ class Simulacao extends React.Component {
             simulacaoStatus: SIMULACAO_STATUS_INDEFINIDA,
             scene: new THREE.Scene(),
             camera: new THREE.PerspectiveCamera(45, 2, 0.1, 1000),
+            //camera: new THREE.OrthographicCamera()
             renderer: new THREE.WebGLRenderer(),
             clock: new THREE.Clock(false)
         };
