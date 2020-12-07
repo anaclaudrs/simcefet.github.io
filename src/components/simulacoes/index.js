@@ -3,7 +3,7 @@
  * Array de colisões inplementadas.
  */
 const ListaSimulacoes = [
-    {id: 'colisao', nome: 'Colisão'},
+    {id: 'colisao-unidimensional-elastica', nome: 'Colisão Unidimensional Elástica'},
 ];
 
 
