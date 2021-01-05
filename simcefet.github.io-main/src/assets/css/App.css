@@ -1,0 +1,31 @@
+/* Arquivo de estilos relacionados ao componente App.js */
+
+nav {
+    background-color: #003869;
+}
+
+nav a img {
+    margin-right: 25px;
+}
+
+form .card .card-body {
+    padding: 15px;
+}
+
+.form-group {
+    margin-bottom: 8px !important;
+}
+
+.form-label-sm {
+    font-size: .875rem;
+    margin-bottom: 0px;
+}
+
+.rodape {
+    margin: 0px;
+    padding: 10px 30px;
+}
+
+.my-container {
+    padding-bottom: 30px;
+}
